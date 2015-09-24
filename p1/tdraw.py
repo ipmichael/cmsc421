@@ -11,13 +11,13 @@ correctly on the grace machines, so you'll get points taken off.
 
 Here's how to use this module:
 - Launch python, in the same directory where you have this file.
-- Type "import draw" to import this file.
-- To initialize a graphics window, call draw.init().
+- Type "import tdraw" to import this file.
+- To initialize a graphics window, call tdraw.init().
 - Each time you want to display a route-finding problem, call
-  draw.draw_problem(walls,start,finish). You can add True as an optional
+  tdraw.draw_problem(walls,start,finish). You can add True as an optional
   4th argument if you want the drawing to include a coordinate grid.
 - To overlay your path onto the drawing of the problem, call
-  draw.draw_path(path).
+  tdraw.draw_path(path).
 
 This file includes an example that you can try out, like this:
 tdraw.init()
