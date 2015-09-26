@@ -57,4 +57,7 @@ def collinear_point_in_edge((x,y),((xa,ya),(xb,yb))):
 	   return True
 	return False
 
+			
+
+
 

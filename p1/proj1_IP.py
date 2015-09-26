@@ -60,3 +60,21 @@ def collinear_point_in_edge((x,y),((xa,ya),(xb,yb))):
 	   and ((ya <= y <= yb) or (yb <= y <= ya)):
 	   return True
 	return False
+
+	
+def crash(e, w):
+	'''
+	Return True if edge e intersects with any wall in w
+	Return False otherwise
+	'''
+
+	for wall in w:
+		if intersect(e, wall):
+			return True
+	return False
+
+def velocities(s, w):
+
+	((x, y), (vx, vy)) = s
+	for i in range(0,2):
+		for j in range(-1,2):
