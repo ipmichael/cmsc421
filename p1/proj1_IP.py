@@ -6,6 +6,7 @@ any unauthorized assistance on this project.
 	Michael Ip, ip.w.michael@gmail.com
 
 	** How The Code Works **
+	
 '''
 
 #Dana Nau's intersect function
@@ -61,7 +62,7 @@ def collinear_point_in_edge((x,y),((xa,ya),(xb,yb))):
 	   return True
 	return False
 
-	
+
 def crash(e, w):
 	'''
 	Return True if edge e intersects with any wall in w
