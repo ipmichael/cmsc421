@@ -6,7 +6,7 @@ any unauthorized assistance on this project.
 	Michael Ip, ip.w.michael@gmail.com
 
 	** How The Code Works **
-	
+
 '''
 
 #Dana Nau's intersect function
@@ -75,7 +75,18 @@ def crash(e, w):
 	return False
 
 def velocities(s, w):
-
+	'''
+	Returns set of possible choices of velocities.
+	'''
+	toReturn = [] #list of possible choices
 	((x, y), (vx, vy)) = s
-	for i in range(0,2):
+	for i in range(-1,2):
 		for j in range(-1,2):
+			(vxTemp, vyTemp) = (vx + i, vy + j)
+			edge = ((x,y), (x+vxTemp, y+vyTemp))
+			if(not crash(edge, w)):
+				toReturn.append((vxTemp,vyTemp))
+	return toReturn
+
+
+
