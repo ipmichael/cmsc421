@@ -102,6 +102,12 @@ def find_path(pnot, finish, w, h):
 • if h is admissible, then r is optimal (i.e., shortest)
 	If no such path exists, find path should return False
 	'''
-    
+    pass
+
+def heur(s, finish, w):
+    """
+    A heuristic function to be used with find_path
+    """
+    ((x, y), (vx, vy)) = s
 
 
