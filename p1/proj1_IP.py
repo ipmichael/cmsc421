@@ -88,5 +88,20 @@ def velocities(s, w):
 				toReturn.append((vxTemp,vyTemp))
 	return toReturn
 
+def find_path(pnot, finish, w, h):
+	'''
+	pnot is the starting point
+	finish is the finish line (an edge)
+	w is the list of walls (edges)
+	h is heuristic function h(s, finish, w) where s is any state s = (p, v)
+	Should return a path r = [p0, p1, . . . , pn] such that:
+• p0 is the starting point, and pn is any point in the finish line
+• each move (pi−1, pi) uses a valid change in velocity
+• no edges in path hit walls
+• pn−1 = pn, i.e., final velocity is (0,0)
+• if h is admissible, then r is optimal (i.e., shortest)
+	If no such path exists, find path should return False
+	'''
+    
 
 
