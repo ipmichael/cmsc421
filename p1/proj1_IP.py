@@ -9,6 +9,8 @@ any unauthorized assistance on this project.
 
 '''
 
+import math
+
 #Dana Nau's intersect function
 def intersect(e1,e2):
 	"""Return True if edges e1 and e2 intersect, False otherwise."""	   
@@ -68,7 +70,6 @@ def crash(e, w):
 	Return True if edge e intersects with any wall in w
 	Return False otherwise
 	'''
-
 	for wall in w:
 		if intersect(e, wall):
 			return True
@@ -94,20 +95,23 @@ def find_path(pnot, finish, w, h):
 	finish is the finish line (an edge)
 	w is the list of walls (edges)
 	h is heuristic function h(s, finish, w) where s is any state s = (p, v)
-	Should return a path r = [p0, p1, . . . , pn] such that:
-• p0 is the starting point, and pn is any point in the finish line
-• each move (pi−1, pi) uses a valid change in velocity
-• no edges in path hit walls
-• pn−1 = pn, i.e., final velocity is (0,0)
-• if h is admissible, then r is optimal (i.e., shortest)
-	If no such path exists, find path should return False
 	'''
-    pass
+	(x,y) = pnot
 
 def heur(s, finish, w):
     """
     A heuristic function to be used with find_path
     """
     ((x, y), (vx, vy)) = s
+    ((x1a, y1a), (x2b, y2b)) = finish
 
+def dist(p0,p1):
+	'''
+	distance function
+	'''
+	return math.sqrt(float((p0[0] - p1[0])**2) + float((p0[1] - p1[1])**2))
 
+def debug():
+	print("Hello")
+
+# print(dist((0,0),(5,5)))
