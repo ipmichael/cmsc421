@@ -104,6 +104,8 @@ def heur(s, finish, w):
     """
     ((x, y), (vx, vy)) = s
     ((x1a, y1a), (x2b, y2b)) = finish
+    nextPoint = (x+vx, y + vy)
+    straightLine = dist((x,y),
 
 def dist(p0,p1):
 	'''
