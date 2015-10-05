@@ -10,6 +10,7 @@ any unauthorized assistance on this project.
 '''
 
 import math
+import Queue
 
 #Dana Nau's intersect function
 def intersect(e1,e2):
@@ -95,6 +96,8 @@ def find_path(pnot, finish, w, h):
     finish is the finish line (an edge)
     w is the list of walls (edges)
     h is heuristic function h(s, finish, w) where s is any state s = (p, v)
+    
+    A* search! i think i'm going for that
     '''
     (x,y) = pnot
 
@@ -130,7 +133,6 @@ def distPtLine(p0, line):
     dist = math.sqrt(dx*dx + dy*dy)
 
     return dist
-
 
 def dist(p0,p1):
     '''
