@@ -1,0 +1,26 @@
+Michael Ip
+CMSC421
+
+    ** How The Code Works **
+    I modified the graph search code given by the professor to implement
+    an A* search. Nodes are placed into the frontier/priority queue based
+    on f(x) = g(x) + h(x), which I used the heapq module to implment.
+    g(x) is the depth of the node in my search tree, and h(x) is from my
+    heuristic function.
+
+    My heuristic compares vel + (vel - 1) + (vel - 2) + ... = vel(vel - 1)/2,
+    where vel is current velocity, to the Euclidean distance to finish.
+    This is the distance the node would be from the finish line if the node
+    were to slow down by 1 every iteration until the finish line.
+    My heuristic returns a value proportional to the difference in that
+    comparison. I noticed that this drastically lowered my computation time
+    in the huge_l case.
+
+    My heuristic also takes into account the Euclidean distance from the
+    next estimated location to the finish line, considering the nodes 
+    current velocity. This lowered the number of nodes in my paths, especially
+    in huge_l.
+
+    In find_path, I implemented explored as a dictionary so that I could map
+    the states to their cost, and check if a better cost path to a repeated
+    state was found.

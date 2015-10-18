@@ -1,0 +1,40 @@
+import proj1_IP, test_probs, timeit
+(p0, finish, walls) = test_probs.rect1
+proj1_IP.find_path(p0, finish, walls, proj1_IP.heur)
+
+(p0, finish, walls) = test_probs.rect2
+proj1_IP.find_path(p0, finish, walls, proj1_IP.heur)
+
+(p0, finish, walls) = test_probs.wall1
+print '-~*~- wall1 -~*~-'
+proj1_IP.find_path(p0, finish, walls, proj1_IP.heur)
+
+import proj1_IP, test_probs, timeit
+(p0, finish, walls) = test_probs.hookwall
+proj1_IP.find_path(p0, finish, walls, proj1_IP.heur)
+
+import proj1_IP, test_probs, timeit
+(p0, finish, walls) = test_probs.spiral1
+proj1_IP.find_path(p0, finish, walls, proj1_IP.heur)
+
+import proj1_IP, test_probs, timeit
+(p0, finish, walls) = test_probs.pdes1
+proj1_IP.find_path(p0, finish, walls, proj1_IP.heur)
+
+import proj1_IP, test_probs, timeit
+(p0, finish, walls) = test_probs.big_l
+proj1_IP.find_path(p0, finish, walls, proj1_IP.heur)
+
+import proj1_IP, test_probs, timeit
+(p0, finish, walls) = test_probs.spiral1
+proj1_IP.find_path(p0, finish, walls, proj1_IP.heur)
+
+import proj1_IP
+w = [{(0, 0),(10, 0)}, {(10, 0),(10, 10)}, {(10, 10),(20, 10)},{(20, 10),(30, 0)}, {(30, 0),(30, 10)}, {(30, 10),(10, 20)},{(10, 20),(0, 20)}, {(0, 20),(0, 0)}, {(3, 14),(10, 14)},{(10, 14),(10, 16)}, {(10, 16),(3, 16)}, {(3, 16),(3, 14)}]
+proj1_IP.velocities(((8,12),(2,2)), w)
+
+import tdraw, proj1_IP, test_probs
+tdraw.init()
+(p0, finish, walls) = test_probs.spiral1
+tdraw.draw_problem(walls,p0,finish,True)
+tdraw.draw_path(proj1_IP.find_path(p0, finish, walls, proj1_IP.heur))
